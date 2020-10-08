@@ -1,0 +1,7 @@
+{
+  "name": "mudotmy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

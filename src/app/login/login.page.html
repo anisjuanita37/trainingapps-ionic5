@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="mudotmy">
+       <ion-title class="ion-text-center">Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item> 
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <ion-button type="submit" color="danger" (click)="authService.GoogleAuth()" expand="block">
+    <ion-icon slot="start" name="logo-google"></ion-icon>
+    <ion-text class="textleft"> Login with Google</ion-text>
+ </ion-button>
+
+ <ion-button type="submit" color="tertiary" (click)="authService.FacebookAuth()" expand="block">
+  <ion-icon slot="start" name="logo-facebook"></ion-icon>
+  Login with Facebook
+</ion-button>
+
+  <ion-button fill="clear" expand="block" routerLink="/registration">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Create New Account
+  </ion-button>
+
+  
+
+  <ion-button type="submit" (click)="authService.SendVerificationMail()" expand="block" fill="clear" size="small">
+    Resend Verification Email
+  </ion-button>
+
+
+
+</ion-content>

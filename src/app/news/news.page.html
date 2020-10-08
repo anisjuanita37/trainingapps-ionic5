@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="mudotmy">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">News</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let i of items">
+    <img src="{{i.image}}" />
+    <video width="100%" controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+      <source src="{{i.video}}" type="video/mp4" />
+      </video>
+    <ion-card-header>
+      <ion-card-subtitle>{{i.timestamp}}</ion-card-subtitle>
+      <ion-card-title>{{i.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{i.fullnews}}</ion-card-content>
+  </ion-card>
+</ion-content>
